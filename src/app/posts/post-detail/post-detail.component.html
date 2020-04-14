@@ -1,0 +1,37 @@
+<ng-container *ngIf="post">
+<div [hidden]="!edditing">
+        <mat-card>
+                <h2>Update Post</h2>
+            <mat-form-field>
+                <input matInput placeholder="Post title" [(ngModel)]="post.title">
+            </mat-form-field> <br>
+            
+            <mat-form-field>
+                <textarea matInput placeholder="Post Content" [(ngModel)]="post.content" rows="10"></textarea>
+            </mat-form-field> <br>
+            
+            <button mat-raised-button color="accent" (click)="updatePost()">Save</button>
+        </mat-card>
+</div>
+<div [hidden]="edditing">
+    <h2>View Mode</h2>
+<mat-card >
+    <img src="post.image" alt="{{post.title}}">
+        
+        <p><small>Posted By {{post.author}} &bull; on {{post.published}}</small></p>
+        <mat-card-content>
+            <h2>{{post.title</h2>
+                <p>{{post.content}}</p>
+        </mat-card-content>
+
+        <mat-card-actions layout-align="end center" *ngIf="auth.currentUserId === post?.author.id">
+            <button mat-icon-button (click)="edditing=true">
+                <mat-icon>Edit</mat-icon>
+            </button>
+            <button mat-icon-button (click)="deletePost()">
+                <mat-icon>Delete</mat-icon>
+            </button>
+        </mat-card-actions>
+</mat-card>
+</div>
+</ng-container>

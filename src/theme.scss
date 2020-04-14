@@ -1,0 +1,12 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+///900 represents the darkest color: To Do Viro
+$viroBlog-app-primary: mat-palette($mat-blue-grey, 900);
+$viroBlog-app-accent:  mat-palette($mat-red, A200);
+
+$viroBlog-app-warn:    mat-palette($mat-red);
+
+$viroBlog-app-theme: mat-light-theme($viroBlog-app-primary, $viroBlog-app-accent, $viroBlog-app-warn);
+
+@include angular-material-theme($viroBlog-app-theme);
