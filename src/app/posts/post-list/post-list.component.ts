@@ -18,4 +18,8 @@ export class PostListComponent implements OnInit {
     console.log(this);
   }
 
+  timeStamp(published){
+    return new Date(published*1000);
+  }
+
 }

@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
     <mat-toolbar-row>
-        <span routerLink="/blog">Viro-blog</span>
+        <span routerLink="/blog">Click to View posts</span>
         <span class="spacer"></span>
             <div *ngIf="auth.afAuth.authState | async as user; else showLogin">
                 <button mat-raised-button color="accent" routerLink="/dashboard">Write a Post</button>
